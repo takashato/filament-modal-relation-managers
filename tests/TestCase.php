@@ -2,9 +2,9 @@
 
 namespace Guava\FilamentModalRelationManagers\Tests;
 
+use Guava\FilamentModalRelationManagers\FilamentModalRelationManagersServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Guava\FilamentModalRelationManagers\FilamentModalRelationManagersServiceProvider;
 
 class TestCase extends Orchestra
 {
