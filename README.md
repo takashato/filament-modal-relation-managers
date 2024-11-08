@@ -12,13 +12,17 @@ This package allows you to embed any of your relation managers inside modals usi
 
 ## Showcase
 
+<video width="320" height="240" controls>
+  <source src="https://github.com/GuavaCZ/filament-modal-relation-managers/raw/main/docs/images/demo_preview.mp4" type="video/mp4">
+</video>
+
+https://github.com/user-attachments/assets/9613ec16-fe3a-4b94-ba03-f589d77764fa
+
 ![Screenshot 1](https://github.com/GuavaCZ/filament-modal-relation-managers/raw/main/docs/images/screenshot_01.png)
 ![Screenshot 2](https://github.com/GuavaCZ/filament-modal-relation-managers/raw/main/docs/images/screenshot_02.png)
 ![Screenshot 3](https://github.com/GuavaCZ/filament-modal-relation-managers/raw/main/docs/images/screenshot_03.png)
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/GuavaCZ/filament-modal-relation-managers/raw/main/docs/images/demo_preview.mp4" type="video/mp4">
-</video>
+
 
 ## Support us
 
