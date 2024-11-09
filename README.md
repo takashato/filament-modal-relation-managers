@@ -38,6 +38,20 @@ You can install the package via composer:
 composer require guava/filament-modal-relation-managers
 ```
 
+## Assets
+
+Make sure you have a custom filament theme installed (more info in the official documentation [here](https://filamentphp.com/docs/3.x/panels/themes#creating-a-custom-theme)) and add the following to your theme's `tailwind.config.js` content property, so that our CSS overrides are correctly built:
+
+```js
+export default {
+   //...
+   content: [
+      // ...
+      './vendor/guava/filament-modal-relation-managers/resources/**/*.blade.php',
+   ]
+}
+```
+
 ## Usage
 
 First, for any relation manager that you want to be able to embed inside modals, add the `CanBeEmbeddedInModals` trait:
