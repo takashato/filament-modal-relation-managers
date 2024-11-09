@@ -81,7 +81,7 @@ public CourseResorce extends Resource {
             ->actions([
                 RelationManagerAction::make('lesson-relation-manager')
                     ->label('View lessons')
-                    ->relationManager(LessonRelationManager::make());
+                    ->relationManager(LessonRelationManager::make()),
             ])
         // ...
         ;
