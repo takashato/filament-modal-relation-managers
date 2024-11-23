@@ -52,6 +52,7 @@ class RelationManagerAction extends Action
                     'relationManager' => $this->normalizeRelationManagerClass($this->getRelationManager()),
                     'ownerRecord' => $record,
                     'shouldHideRelationManagerHeading' => $this->shouldHideRelationManagerHeading(),
+                    'fixIconPaddingLeft' => (bool)$this->getModalIcon() && !in_array($this->getModalWidth(), [MaxWidth::ExtraSmall, MaxWidth::Small]),
                 ]);
             })
         ;
