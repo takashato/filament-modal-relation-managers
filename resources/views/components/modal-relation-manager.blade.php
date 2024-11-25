@@ -7,7 +7,7 @@
 
 <div @class([
     "-mx-6 [&_.fi-ta-ctn]:![box-shadow:none]",
-    "-ml-[5.2rem]" => $fixIconPaddingLeft,
+    "-ms-[5.25rem]" => $fixIconPaddingLeft,
     "[&_.fi-ta-header-heading]:hidden" => $shouldHideRelationManagerHeading,
 ])>
     @livewire($relationManager, ['ownerRecord' => $ownerRecord])
