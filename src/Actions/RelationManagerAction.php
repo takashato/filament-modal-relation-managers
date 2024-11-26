@@ -4,6 +4,7 @@ namespace Guava\FilamentModalRelationManagers\Actions;
 
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\RelationManagers\RelationManagerConfiguration;
+use Filament\Support\Enums\MaxWidth;
 use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\Model;
 
