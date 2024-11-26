@@ -66,12 +66,13 @@ class LessonsRelationManager extends RelationManager
 ```
 
 And that's it! Now you can use the `RelationManagerAction` anywhere you like to open the relation manager as a modal:
+
 ```php
-use Guava\FilamentModalRelationManagers\Actions\RelationManagerAction;
+use Guava\FilamentModalRelationManagers\Actions\Table\RelationManagerAction;
 
 // for example in a resource table
 
-public CourseResorce extends Resource {
+public CourseResource extends Resource {
 
     // ...
 
@@ -82,6 +83,32 @@ public CourseResorce extends Resource {
                 RelationManagerAction::make('lesson-relation-manager')
                     ->label('View lessons')
                     ->relationManager(LessonRelationManager::make()),
+            ])
+        // ...
+        ;
+    }
+
+    // ...
+}
+```
+
+```php
+use Guava\FilamentModalRelationManagers\Actions\Infolist\RelationManagerAction;
+
+// for example in a resource infolist
+
+public CourseResource extends Resource {
+
+    // ...
+
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('title')
+                    ->suffixAction(RelationManagerAction::make()
+                        ->label('View lessons')
+                        ->relationManager(LessonRelationManager::make()))
             ])
         // ...
         ;
