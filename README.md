@@ -72,7 +72,7 @@ use Guava\FilamentModalRelationManagers\Actions\Table\RelationManagerAction;
 
 // for example in a resource table
 
-public CourseResource extends Resource {
+class CourseResource extends Resource {
 
     // ...
 
@@ -97,7 +97,7 @@ use Guava\FilamentModalRelationManagers\Actions\Infolist\RelationManagerAction;
 
 // for example in a resource infolist
 
-public CourseResource extends Resource {
+class CourseResource extends Resource {
 
     // ...
 
@@ -118,6 +118,28 @@ public CourseResource extends Resource {
 }
 ```
 
+```php
+use Guava\FilamentModalRelationManagers\Actions\Action\RelationManagerAction;
+
+// for example in edit page
+
+class EditCourse extends EditRecord {
+
+    // ...
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            RelationManagerAction::make()
+                ->label('View lessons')
+                ->record($this->getRecord())
+                ->relationManager(LessonRelationManager::make())
+        ];
+    }
+
+    // ...
+}
+```
 ## Testing
 
 ```bash

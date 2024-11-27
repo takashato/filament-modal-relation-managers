@@ -47,6 +47,8 @@ trait HasRelationManagerAction
 
     public function configure(): static
     {
+        parent::setUp();
+
         return $this
             ->modalContent(function (Model $record) {
                 return view('guava-modal-relation-managers::components.modal-relation-manager', [
@@ -54,6 +56,7 @@ trait HasRelationManagerAction
                     'ownerRecord' => $record,
                     'shouldHideRelationManagerHeading' => $this->shouldHideRelationManagerHeading(),
                     'fixIconPaddingLeft' => (bool) $this->getModalIcon() && ! in_array($this->getModalWidth(), [MaxWidth::ExtraSmall, MaxWidth::Small]),
+                    'isModalSlideOver' => $this->isModalSlideOver(),
                 ]);
             });
     }
