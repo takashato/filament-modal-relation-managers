@@ -1,16 +1,15 @@
 <?php
 
-namespace Guava\FilamentModalRelationManagers\Actions;
+namespace Guava\FilamentModalRelationManagers\Concerns;
 
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\RelationManagers\RelationManagerConfiguration;
 use Filament\Support\Enums\MaxWidth;
-use Filament\Tables\Actions\Action;
 use Illuminate\Database\Eloquent\Model;
 
 use function view;
 
-class RelationManagerAction extends Action
+trait HasRelationManagerAction
 {
     protected string | RelationManagerConfiguration $relationManager;
 
@@ -47,6 +46,8 @@ class RelationManagerAction extends Action
 
     public function configure(): static
     {
+        parent::setUp();
+
         return $this
             ->modalContent(function (Model $record) {
                 return view('guava-modal-relation-managers::components.modal-relation-manager', [
@@ -54,6 +55,7 @@ class RelationManagerAction extends Action
                     'ownerRecord' => $record,
                     'shouldHideRelationManagerHeading' => $this->shouldHideRelationManagerHeading(),
                     'fixIconPaddingLeft' => (bool) $this->getModalIcon() && ! in_array($this->getModalWidth(), [MaxWidth::ExtraSmall, MaxWidth::Small]),
+                    'isModalSlideOver' => $this->isModalSlideOver(),
                 ]);
             })
         ;
