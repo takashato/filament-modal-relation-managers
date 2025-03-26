@@ -54,18 +54,8 @@ export default {
 
 ## Usage
 
-First, for any relation manager that you want to be able to embed inside modals, add the `CanBeEmbeddedInModals` trait:
-```php
-use Guava\FilamentModalRelationManagers\Concerns\CanBeEmbeddedInModals;
-class LessonsRelationManager extends RelationManager
-{
-    use CanBeEmbeddedInModals;
-    
-    // ...
-}
-```
 
-And that's it! Now you can use the `RelationManagerAction` anywhere you like to open the relation manager as a modal:
+You can use the `RelationManagerAction` anywhere you like to open the relation manager as a modal:
 
 ```php
 use Guava\FilamentModalRelationManagers\Actions\Table\RelationManagerAction;
