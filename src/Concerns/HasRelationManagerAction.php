@@ -58,6 +58,7 @@ trait HasRelationManagerAction
                     'isModalSlideOver' => $this->isModalSlideOver(),
                 ]);
             })
+            ->modalSubmitAction(false)
         ;
     }
 
