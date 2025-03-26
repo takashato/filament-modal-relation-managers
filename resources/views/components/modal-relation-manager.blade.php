@@ -11,5 +11,5 @@
     "-ms-[5.25rem]" => $fixIconPaddingLeft && !$isModalSlideOver,
     "[&_.fi-ta-header-heading]:hidden" => $shouldHideRelationManagerHeading,
 ])>
-    @livewire($relationManager, ['ownerRecord' => $ownerRecord])
+    @livewire($relationManager, ['ownerRecord' => $ownerRecord, 'pageClass' => ''])
 </div>
