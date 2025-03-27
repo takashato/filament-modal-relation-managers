@@ -2,10 +2,12 @@
 
 namespace Guava\FilamentModalRelationManagers\Concerns;
 
+use Filament\Pages\Page;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Resources\RelationManagers\RelationManagerConfiguration;
 use Filament\Support\Enums\MaxWidth;
 use Illuminate\Database\Eloquent\Model;
+use Livewire\Component;
 
 use function view;
 
@@ -49,13 +51,18 @@ trait HasRelationManagerAction
         parent::setUp();
 
         return $this
-            ->modalContent(function (Model $record) {
+            ->modalContent(function (Model $record, Component $livewire) {
                 return view('guava-modal-relation-managers::components.modal-relation-manager', [
                     'relationManager' => $this->normalizeRelationManagerClass($this->getRelationManager()),
                     'ownerRecord' => $record,
                     'shouldHideRelationManagerHeading' => $this->shouldHideRelationManagerHeading(),
                     'fixIconPaddingLeft' => (bool) $this->getModalIcon() && ! in_array($this->getModalWidth(), [MaxWidth::ExtraSmall, MaxWidth::Small]),
                     'isModalSlideOver' => $this->isModalSlideOver(),
+                    'pageClass' => match (true) {
+                        $livewire instanceof Page => get_class($livewire),
+                        $livewire instanceof RelationManager => $livewire->getPageClass(),
+                        default => '',
+                    },
                 ]);
             })
             ->modalSubmitAction(false)
