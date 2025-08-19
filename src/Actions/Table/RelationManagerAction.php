@@ -2,7 +2,7 @@
 
 namespace Guava\FilamentModalRelationManagers\Actions\Table;
 
-use Filament\Tables\Actions\Action;
+use Filament\Actions\Action;
 use Guava\FilamentModalRelationManagers\Concerns;
 
 class RelationManagerAction extends Action
